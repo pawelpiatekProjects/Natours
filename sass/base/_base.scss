@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*styles for all things on my page*/
+}
+
+html{
+  font-size: 62.5%;
+  /*root element for the rem
+  we should set relative root font size*/
+}
+
+body{
+
+  box-sizing: border-box;
+}

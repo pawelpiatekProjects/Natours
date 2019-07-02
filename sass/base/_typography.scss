@@ -1,0 +1,71 @@
+@import "../abstracts/variables";
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+}
+
+.heading-primary{
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--name{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;/*calling to the animation*/
+    animation-duration: 1s;
+    animation-timing-function: ease-out ; /*kind of the animation*/
+    /*animation-delay: 3s; the page will wait for 3s after refreshing the page*/
+    /*animation-iteration-count: 3; how many iterations of animation */
+
+  }
+
+  &--sub{
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    animation: moveInRight 1s ease-out;/*shorter version*/
+
+  }
+}
+
+.heading-secondary{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+  display: inline-block;//changing display to the inline-block the element has length only to the end
+  -webkit-background-clip: text;//the background is only at the sign
+  color:transparent; // we have to set color to transparent to see the background
+  transition: all .2s;
+  letter-spacing: .2rem;
+
+  &:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+
+}
+
+.heading-tertiary{
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph{
+  font-size: $default-font-size;
+  &:not(:last-child){
+    margin-bottom: 3rem;
+  }
+}

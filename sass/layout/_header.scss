@@ -1,0 +1,39 @@
+@import "../abstracts/variables";
+
+.header{
+  height: 95vh;
+  /*todo: check vh*/
+  background-image: linear-gradient(to right bottom,
+          rgba($color-primary-light, 0.80), /*we are using rgba to add opacity to the colors to make the background photo visible*/
+          rgba($color-primary-dark, 0.80)),
+  url("../img/hero.jpg");
+
+  background-size: cover;
+  /*background-size: cover always ft the image to the size of the box*/
+  background-position: top;
+  /*the top of the image always stay ont the top of our container*/
+
+  clip-path: polygon(0 0 ,100% 0,100% 75vh,0 100%);
+  /*in the polygon we are setting the corners of our area that should bo visible*/
+  position: relative;/*some child div is in relative position to the header*/
+
+  &__logo-box{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo{
+    height: 3.5rem;
+  }
+
+  &__text-box{
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%,-50%);/*we are using transform translate to make our text-box center*/
+    /*transform is the relation to the element itselves */
+    text-align: center;
+    /*todo: trasnform: translate*/
+  }
+}

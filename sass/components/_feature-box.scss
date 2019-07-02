@@ -1,0 +1,26 @@
+@import "../abstracts/variables";
+
+.feature-box{
+
+  background-color: rgba($color-white,.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: $box-shadow-1;
+  transition: transform .3s;
+
+  &:hover{
+    transform: translateY(-1.5rem) scale(1.03) ;
+  }
+  &__icon{
+    font-size: 6rem;
+    margin-bottom: .5rem;
+
+    background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+    display: inline-block;//changing display to the inline-block the element has length only to the end
+    -webkit-background-clip: text;//the background is only at the sign
+    color:transparent;
+  }
+
+}

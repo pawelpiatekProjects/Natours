@@ -1,0 +1,89 @@
+@import "../abstracts/variables";
+
+.btn{
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /*we can center inline block elements using text-align:center*/
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover{
+    transform: translateY(-3px);
+    /*box-shadow: X Y blur rgba;*/
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    &::after{
+      /*what is the after element doing with hover*/
+      transform: scaleX(1.4) scaleY(1.6); /*increasing the element*/
+      opacity: 0;
+    }
+  }
+
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+
+  &--white{
+    background: $color-white;
+    color: $color-grey-dark;
+
+    &::after{
+      background-color: $color-white;
+
+    }
+  }
+
+  &--animated{
+    animation: moveInBottom .5s ease-out .75s/*delay*/;
+    animation-fill-mode: backwards; /*applying the styling o the animation 0% styling before the animation
+    starts*/
+  }
+
+  &::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s ; /*setting transition in initial element*/
+
+  }
+
+}
+
+.btn-text{
+  &:link,
+  &:visited{
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;//with small size we cen use 'px' instead of 'rem' because it wont change
+    transition: all .2s;
+
+  }
+
+  &:hover{
+    background-color: $color-primary;
+    color:$color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &:active{
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+}
