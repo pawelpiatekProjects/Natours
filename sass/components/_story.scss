@@ -23,6 +23,7 @@
 
     clip-path: circle(50% at 50% 50%); //we are using this to make our element look like circle
     transform: translateX(-3rem) skewX(12deg);
+    position: relative;
   }
 
   &__text{
@@ -31,5 +32,32 @@
 
   &__img{
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s;
+  }
+
+  &__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); // at the beginning our element is a lower then in the final
+    //form, because it rises up on the hover animation to be in the center -50% -50%
+    color: $color-white;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; //todo: check backface-visibility
+  }
+
+  &:hover &__caption{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img{
+    transform: translateX(-4rem) scale(1);
+    filter: blur(4px) brightness(80%);
+    //filter: brightness - value lower then 100% makes img darker, value higher then 100% brighter
   }
 }
