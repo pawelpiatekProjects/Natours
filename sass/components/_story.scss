@@ -4,16 +4,32 @@
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
   background-color: $color-white;
   border-radius: 3px;
-  padding: 6rem;
+  padding: 6rem 6rem 6rem 9rem;
   font-size: $default-font-size;
+
+  transform: skewX(-12deg);
+
 
   &__shape{
     width: 15rem;
     height: 15rem;
     float: left;
-    background-color: orangered;
+
+
     -webkit-shape-outside: circle(50% at 50% 50%) ;
     shape-outside: circle(50% at 50% 50%);//todo: check shape-outside
-    //it only works when the shape has defined dimensions
+    //shape-outside is used to rap the element with some text
+    //it only works when the shape has defined
+
+    clip-path: circle(50% at 50% 50%); //we are using this to make our element look like circle
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__text{
+    transform: skewX(12deg);
+  }
+
+  &__img{
+    height: 100%;
   }
 }
