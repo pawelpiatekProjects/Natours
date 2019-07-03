@@ -318,13 +318,23 @@
                         <div class="form__group">
                             <div class="form__radio-group">
                                 <input type="radio" id="small" class="form__radio-input" name="size">
-                                <label for="small" class="form__radio-label">Small tour group</label>
+                                <label for="small" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    <!--we can't style radio buttons so we have to add our custom
+                                    buttons and than we can style them. We can do this because we linked
+                                    our input with label with id and now when we click label our
+                                    input is also clicked even when it isn't visible -->
+                                    Small tour group
+                                </label>
                             </div>
                             <!--if we want to have single choice radio button group we have
                             to add the same name to our radio buttons-->
                             <div class="form__radio-group">
                                 <input type="radio" id="large" class="form__radio-input" name="size">
-                                <label for="large" class="form__radio-label">Large tour group</label>
+                                <label for="large" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                    Large tour group
+                                </label>
                             </div>
                         </div>
                     </form>
