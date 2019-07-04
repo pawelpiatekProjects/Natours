@@ -5,11 +5,18 @@
 //  if we have enough place then the row should take 1140px but if is not enough place row should
   //take the 100% of the available place
 
+  @include respond(tab-port){
+    max-width: 50rem;
+  }
+
   margin: 0 auto;
 
 
   &:not(:last-child){
     margin-bottom: $gutter-vertical;
+    @include respond(tab-port){
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -19,6 +26,14 @@
     float:left;
     &:not(:last-child){
       margin-right: $gutter-horizontal;
+      @include respond(tab-port){
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port){
+      width: 100% !important;
     }
   }
   //every element that starts with col- (this is an attribute
