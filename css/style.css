@@ -100,6 +100,10 @@ body {
     /*kind of the animation*/
     /*animation-delay: 3s; the page will wait for 3s after refreshing the page*/
     /*animation-iteration-count: 3; how many iterations of animation */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--name {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -107,6 +111,9 @@ body {
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
     /*shorter version*/ }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -118,6 +125,12 @@ body {
   color: transparent;
   transition: all .2s;
   letter-spacing: .2rem; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -828,6 +841,10 @@ body {
     /*kind of the animation*/
     /*animation-delay: 3s; the page will wait for 3s after refreshing the page*/
     /*animation-iteration-count: 3; how many iterations of animation */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--name {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -835,6 +852,9 @@ body {
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
     /*shorter version*/ }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -846,6 +866,12 @@ body {
   color: transparent;
   transition: all .2s;
   letter-spacing: .2rem; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
