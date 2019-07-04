@@ -14,20 +14,24 @@ html{
   /*root element for the rem
   we should set relative root font size*/
 
-  @include respond(phone){
-    font-size: 50%;
+  //@include respond(phone){
+  //  font-size: 50%;
+  //
+  //}
 
-  }
-  @include respond(tab-port){
-    font-size: 60%;
-
-  }
-  @include respond(tab-land){
-    font-size: 70%;
-
-  }
+//THE ORDER OF MEDIA IS VERY IMPORTANT (FROM THE BIGGEST TO THE LOWEST)
   @include respond(big-desktop){
-    font-size: 80%;
+    font-size: 75%;
+
+  }
+
+  @include respond(tab-land){
+    font-size: 56.25%;
+
+  }
+
+  @include respond(tab-port){
+    font-size: 50%;
 
   }
 
