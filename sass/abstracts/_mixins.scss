@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin clearfix{
   &::after{
     content: "";
@@ -20,3 +22,30 @@
 1200 - 1800: normal style
 1800px+ - big desktop
 */
+
+@mixin respond-phone{
+  @media(max-width: $phone){@content} //content allows us to put a block of code to the mixin
+}
+
+/*
+$breakpoint argument choices
+-phone
+-tab-port
+-tab-land
+-big-desktop
+ */
+
+@mixin respond($breakpoint){
+  @if $breakpoint == phone{
+    @media(max-width: $phone){@content}
+  }
+  @if $breakpoint == tab-port{
+    @media(max-width: $tablet-portrait){@content}
+  }
+  @if $breakpoint == tab-land{
+    @media(max-width: $tablet-landscape){@content}
+  }
+  @if $breakpoint == big-desktop{
+    @media(min-width: $large-desktop){@content}
+  }
+}

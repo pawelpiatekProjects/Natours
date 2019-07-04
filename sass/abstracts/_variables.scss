@@ -29,3 +29,11 @@ $gutter-horizontal:6rem;
 
 //box shadows
 $box-shadow-1: 0 1.5rem 4rem rgba($color-black, .15);
+
+//Responsive sizes
+//It is better option to use em instead of rem in media query
+//Ems and rems get the font size from default font size from browser
+$phone: 37.5em;
+$tablet-portrait: 56.25em;
+$tablet-landscape: 75em;
+$large-desktop:112.5em;
