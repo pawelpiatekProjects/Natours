@@ -17,6 +17,11 @@
   /*in the polygon we are setting the corners of our area that should bo visible*/
   position: relative;/*some child div is in relative position to the header*/
 
+  @include respond(phone){
+    clip-path: polygon(0 0 ,100% 0,100% 85vh,0 100%);
+  }
+
+
   &__logo-box{
     position: absolute;
     top: 4rem;
