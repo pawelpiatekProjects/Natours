@@ -713,14 +713,35 @@ $breakpoint argument choices
     width: 33.333333%;
     display: table-cell;
     vertical-align: middle; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        width: 100%;
+        display: inline-block; } }
   .popup__right {
     height: 66.666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: inline-block; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media (max-width: 56.25em) {
+      .popup__img {
+        width: 50%;
+        display: inline-block;
+        float: left; } }
+    @media (max-width: 37.5em) {
+      .popup__img {
+        height: 20%;
+        padding: 0;
+        float: left; } }
+    @media (max-width: 56.25em) {
+      .popup__img--right {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.8); } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -731,6 +752,10 @@ $breakpoint argument choices
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media (max-width: 37.5em) {
+      .popup__text {
+        column-count: 1;
+        margin-bottom: 1rem; } }
 
 .header {
   height: 95vh;
