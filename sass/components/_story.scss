@@ -1,0 +1,85 @@
+.story{
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: rgba($color-white, .6); //effect of opacity but only on background
+  border-radius: 3px;
+  padding: 6rem 6rem 6rem 9rem;
+  font-size: $default-font-size;
+
+  transform: skewX(-12deg);
+
+  @include respond(tab-port){
+    width: 100%;
+    padding: 4rem 4rem 4rem 7rem;
+  }
+
+  @include respond(phone){
+    transform: skewX(0);
+  }
+
+
+  &__shape{
+    width: 15rem;
+    height: 15rem;
+    float: left;
+
+
+    -webkit-shape-outside: circle(50% at 50% 50%) ;
+    shape-outside: circle(50% at 50% 50%);//todo: check shape-outside
+    //shape-outside is used to rap the element with some text
+    //it only works when the shape has defined
+
+    clip-path: circle(50% at 50% 50%); //we are using this to make our element look like circle
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    backface-visibility: hidden;
+
+    @include respond(phone){
+      transform:translateX(-3rem) skewX(0);
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__text{
+    transform: skewX(12deg);
+
+    @include respond(phone){
+      transform:translateX(-3rem) skewX(0);
+    }
+
+  }
+
+  &__img{
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all .5s;
+
+  }
+
+  &__caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%); // at the beginning our element is a lower then in the final
+    //form, because it rises up on the hover animation to be in the center -50% -50%
+    color: $color-white;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; //todo: check backface-visibility
+  }
+
+  &:hover &__caption{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img{
+    transform: translateX(-4rem) scale(1);
+    filter: blur(4px) brightness(80%);
+    //filter: brightness - value lower then 100% makes img darker, value higher then 100% brighter
+  }
+}

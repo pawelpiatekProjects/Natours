@@ -10,6 +10,10 @@
   box-shadow: $box-shadow-1;
   transition: transform .3s;
 
+  @include respond(tab-port){
+    padding: 2rem;
+  }
+
   &:hover{
     transform: translateY(-1.5rem) scale(1.03) ;
   }
@@ -21,6 +25,10 @@
     display: inline-block;//changing display to the inline-block the element has length only to the end
     -webkit-background-clip: text;//the background is only at the sign
     color:transparent;
+
+    @include respond(tab-port){
+      margin: 0;
+    }
   }
 
 }

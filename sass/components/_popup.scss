@@ -1,0 +1,128 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 4000;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .3s;
+
+
+
+  &:target { //when some link indicate on this element, this styling is added
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__content {
+    @include absoluteCenter;
+    width: 75%;
+    background-color: $color-white;
+
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+
+    display: table;
+    overflow: hidden;
+    opacity: 1;
+
+    transition: all .4s;
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+    vertical-align: middle;
+
+    @include respond(tab-port) {
+      width: 100%;
+      display: inline-block;
+    }
+
+
+  }
+
+  &__right {
+    height: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      width: 100%;
+      display: inline-block;
+    }
+
+
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+
+    @include respond(tab-port) {
+      width: 50%;
+      display: inline-block;
+      float: left;
+
+    }
+
+    @include respond(phone) {
+      height: 20%;
+      padding: 0;
+      float: left;
+    }
+
+
+
+    &--right {
+      @include respond(tab-port) {
+        box-shadow: 0 1rem 3rem rgba($color-black,.8);
+
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2; //dividing into columns
+    column-gap: 4rem; // gap between columns
+    column-rule: 1px solid $color-grey-light-2; //order between the columns
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; //hyphen - myślnik
+
+    @include respond(phone) {
+      column-count: 1;
+      margin-bottom: 1rem;
+    }
+  }
+
+
+}
